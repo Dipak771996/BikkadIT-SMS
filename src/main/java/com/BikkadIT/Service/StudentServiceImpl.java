@@ -30,7 +30,7 @@ public class StudentServiceImpl implements StudentService {
 	}
 
 	@Override
-	public Student getStudentByAge(Integer age) {
+	public Student getStudentByAge(int age) {
 		
 		Student student = studentRepository.findByAge(age);
 		return student;

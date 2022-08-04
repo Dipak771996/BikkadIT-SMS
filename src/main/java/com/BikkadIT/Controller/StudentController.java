@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.BikkadIT.Model.Student;
@@ -40,8 +40,8 @@ public class StudentController {
 		return new ResponseEntity<>(allStudent,HttpStatus.NO_CONTENT);
 	}
 	
-	@GetMapping(value = "/getStudent",produces = "application/json",consumes = "application/json")
-	public ResponseEntity<Student> getStudentByAge(@RequestBody Integer age)
+	@GetMapping(value = "/getStudent/{age}",produces = "application/json")
+	public ResponseEntity<Student> getStudentByAge(@PathVariable int age)
 	{
 		Student student = studentService.getStudentByAge(age);
 		System.out.println(student);
