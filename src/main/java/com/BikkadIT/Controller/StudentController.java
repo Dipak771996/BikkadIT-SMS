@@ -41,15 +41,14 @@ public class StudentController {
 	}
 	
 	@GetMapping(value = "/getStudent/{age}",produces = "application/json")
-	public ResponseEntity<Student> getStudentByAge(@PathVariable int age)
+	public ResponseEntity<List<Student>> getStudentByAge(@PathVariable int age)
 	{
-		Student student = studentService.getStudentByAge(age);
-		System.out.println(student);
+		List<Student> student = studentService.getStudentByAge(age);
 		
 		if(student != null)
 		{
-			return new ResponseEntity<Student>(student,HttpStatus.OK);
+			return new ResponseEntity<List<Student>>(student,HttpStatus.OK);
 		}
-		return new ResponseEntity<Student>(student,HttpStatus.BAD_REQUEST);
+		return new ResponseEntity<List<Student>>(student,HttpStatus.BAD_REQUEST);
 	}
 }

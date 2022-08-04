@@ -8,5 +8,5 @@ public interface StudentService {
 
 	public Student saveStudent(Student student);
 	public List<Student> getAllStudent();
-	public Student getStudentByAge(int age);
+	public List<Student> getStudentByAge(int age);
 }

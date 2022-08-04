@@ -30,9 +30,9 @@ public class StudentServiceImpl implements StudentService {
 	}
 
 	@Override
-	public Student getStudentByAge(int age) {
+	public List<Student> getStudentByAge(int age) {
 		
-		Student student = studentRepository.findByAge(age);
+		List<Student> student = studentRepository.findByAge(age);
 		return student;
 	}
 
